@@ -11,7 +11,9 @@ Steps to run robot framework test cases in Mac machine:
 3. Navigate upto the location where the file 'test_repeated_invoice.txt' is located.
 
 4. Run the test using the below command:
-   pybot -L TRACE test_repeated_invoice.txt
+   pybot -L TRACE -v USER_EMAIL:test@gmail.com -v USER_PASSWORD=mypassword test_repeated_invoice.txt
+
+   Note: Change the test@gmail.com and mypassword to a valid xero credentials
 
 5. To view the report, please open 'report.html' file generated at same location. I have attached a sample report which I was generated for this test case.
 

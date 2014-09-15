@@ -11,8 +11,8 @@ ${XERO_LOGIN_PAGE}     https://go.xero.com
 ${BROWSER_FIREFOX}     firefox
 ${EMAIL_INPUT_TEXTBOX}     id=email
 ${PASSWORD_INPUT_TEXTBOX}    id=password
-${USER_EMAIL}     deepti.kinnerkar@gmail.com
-${USER_PASSWORD}     Secret123
+${USER_EMAIL}     test@gmail.com
+${USER_PASSWORD}     mypassword
 ${LOGIN_BUTTON}     id=submitButton
 ${DASHBOARD}        Dashboard
 ${ACCOUNTS_ID}     id=Accounts
