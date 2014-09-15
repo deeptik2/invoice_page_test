@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20140915 05:43:57.195" generator="Robot 2.8.5 (Python 2.7.5 on darwin)">
+<suite source="/Users/deepti/Desktop/test_repeated_invoice.txt" id="s1" name="Test Repeated Invoice">
+<kw type="setup" name="Launch Browser And Sign Into Xero">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20140915 05:43:57.573" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Launch Xero Login Page">
+<doc>Launches Xero site in Firefox</doc>
+<arguments>
+</arguments>
+<msg timestamp="20140915 05:43:57.573" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${XERO_LOGIN_PAGE}</arg>
+<arg>${BROWSER_FIREFOX}</arg>
+</arguments>
+<msg timestamp="20140915 05:43:57.574" level="TRACE">Arguments: [ u'https://go.xero.com' | u'firefox' ]</msg>
+<msg timestamp="20140915 05:43:57.574" level="INFO">Opening browser 'firefox' to base url 'https://go.xero.com'</msg>
+<msg timestamp="20140915 05:44:03.013" level="DEBUG">POST http://127.0.0.1:65179/hub/session {"desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20140915 05:44:03.063" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:03.064" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/timeouts/async_script {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "ms": 50000.0}</msg>
+<msg timestamp="20140915 05:44:03.069" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:03.070" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/timeouts/implicit_wait {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "ms": 0.0}</msg>
+<msg timestamp="20140915 05:44:03.075" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:03.075" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/url {"url": "https://go.xero.com", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1"}</msg>
+<msg timestamp="20140915 05:44:13.448" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:13.448" level="DEBUG">Opened browser with session id 8142c2e2-1d33-5848-9564-ac3f94900fb1</msg>
+<msg timestamp="20140915 05:44:13.448" level="TRACE">Return: 1</msg>
+<status status="PASS" endtime="20140915 05:44:13.448" starttime="20140915 05:43:57.574"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20140915 05:44:13.449" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20140915 05:44:13.449" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/window/current/maximize {"windowHandle": "current", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1"}</msg>
+<msg timestamp="20140915 05:44:13.923" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:13.923" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:44:13.923" starttime="20140915 05:44:13.449"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Element">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${EMAIL_INPUT_TEXTBOX}</arg>
+</arguments>
+<msg timestamp="20140915 05:44:13.924" level="TRACE">Arguments: [ u'id=email' ]</msg>
+<msg timestamp="20140915 05:44:13.924" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "id", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "email"}</msg>
+<msg timestamp="20140915 05:44:13.963" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:13.963" level="INFO">Current page contains element 'id=email'.</msg>
+<msg timestamp="20140915 05:44:13.963" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:44:13.963" starttime="20140915 05:44:13.923"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20140915 05:44:13.964" level="TRACE">Arguments: [ u'4' ]</msg>
+<msg timestamp="20140915 05:44:13.964" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20140915 05:44:13.964" starttime="20140915 05:44:13.964"></status>
+</kw>
+<msg timestamp="20140915 05:44:13.964" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:44:13.964" starttime="20140915 05:43:57.573"></status>
+</kw>
+<kw type="kw" name="Sign In to Xero">
+<doc>Log into the xero website</doc>
+<arguments>
+</arguments>
+<msg timestamp="20140915 05:44:13.965" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${EMAIL_INPUT_TEXTBOX}</arg>
+<arg>${USER_EMAIL}</arg>
+</arguments>
+<msg timestamp="20140915 05:44:13.966" level="TRACE">Arguments: [ u'id=email' | u'deepti.kinnerkar@gmail.com' ]</msg>
+<msg timestamp="20140915 05:44:13.966" level="INFO">Typing text 'deepti.kinnerkar@gmail.com' into text field 'id=email'</msg>
+<msg timestamp="20140915 05:44:13.966" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "id", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "email"}</msg>
+<msg timestamp="20140915 05:44:14.061" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:18.063" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/element/{8697af0d-79f8-244e-a958-d3ca6514f24d}/clear {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": "{8697af0d-79f8-244e-a958-d3ca6514f24d}"}</msg>
+<msg timestamp="20140915 05:44:18.110" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:22.113" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/element/{8697af0d-79f8-244e-a958-d3ca6514f24d}/value {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": "{8697af0d-79f8-244e-a958-d3ca6514f24d}", "value": ["d", "e", "e", "p", "t", "i", ".", "k", "i", "n", "n", "e", "r", "k", "a", "r", "@", "g", "m", "a", "i", "l", ".", "c", "o", "m"]}</msg>
+<msg timestamp="20140915 05:44:22.183" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:26.186" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:44:26.186" starttime="20140915 05:44:13.965"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${PASSWORD_INPUT_TEXTBOX}</arg>
+<arg>${USER_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20140915 05:44:26.187" level="TRACE">Arguments: [ u'id=password' | u'Secret123' ]</msg>
+<msg timestamp="20140915 05:44:26.187" level="INFO">Typing text 'Secret123' into text field 'id=password'</msg>
+<msg timestamp="20140915 05:44:26.188" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "id", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "password"}</msg>
+<msg timestamp="20140915 05:44:26.207" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:30.209" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/element/{d3a5222c-9344-404b-9b00-a3580c741a6d}/clear {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": "{d3a5222c-9344-404b-9b00-a3580c741a6d}"}</msg>
+<msg timestamp="20140915 05:44:30.254" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:34.256" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/element/{d3a5222c-9344-404b-9b00-a3580c741a6d}/value {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": "{d3a5222c-9344-404b-9b00-a3580c741a6d}", "value": ["S", "e", "c", "r", "e", "t", "1", "2", "3"]}</msg>
+<msg timestamp="20140915 05:44:34.315" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:38.319" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:44:38.318" starttime="20140915 05:44:26.187"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20140915 05:44:38.319" level="TRACE">Arguments: [ u'id=submitButton' ]</msg>
+<msg timestamp="20140915 05:44:38.319" level="INFO">Clicking element 'id=submitButton'.</msg>
+<msg timestamp="20140915 05:44:38.320" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "id", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "submitButton"}</msg>
+<msg timestamp="20140915 05:44:38.327" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:42.330" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/element/{0157ca03-82ec-bf43-b866-11570dae0483}/click {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": "{0157ca03-82ec-bf43-b866-11570dae0483}"}</msg>
+<msg timestamp="20140915 05:44:50.339" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:54.342" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:44:54.342" starttime="20140915 05:44:38.319"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${DASHBOARD}</arg>
+</arguments>
+<msg timestamp="20140915 05:44:54.343" level="TRACE">Arguments: [ u'Dashboard' ]</msg>
+<msg timestamp="20140915 05:44:54.343" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/frame {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": null}</msg>
+<msg timestamp="20140915 05:44:54.351" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:44:58.354" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "xpath", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "//*[contains(., 'Dashboard')]"}</msg>
+<msg timestamp="20140915 05:44:58.364" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:02.366" level="INFO">Current page contains text 'Dashboard'.</msg>
+<msg timestamp="20140915 05:45:02.366" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:02.366" starttime="20140915 05:44:54.343"></status>
+</kw>
+<msg timestamp="20140915 05:45:02.366" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:02.366" starttime="20140915 05:44:13.964"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Wait Until Element Is Visible">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ACCOUNTS_ID}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:02.367" level="TRACE">Arguments: [ u'id=Accounts' ]</msg>
+<msg timestamp="20140915 05:45:02.367" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "id", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "Accounts"}</msg>
+<msg timestamp="20140915 05:45:02.389" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:06.392" level="DEBUG">GET http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/element/{6b0d5114-5427-3146-adb4-e3b9c4e3891e}/displayed {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": "{6b0d5114-5427-3146-adb4-e3b9c4e3891e}"}</msg>
+<msg timestamp="20140915 05:45:06.491" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:10.494" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:10.494" starttime="20140915 05:45:02.367"></status>
+</kw>
+<msg timestamp="20140915 05:45:10.494" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:10.494" starttime="20140915 05:43:57.572"></status>
+</kw>
+<test id="s1-t1" name="Test for A Few Mandatory Params">
+<kw type="kw" name="Initiate Repeating Invoice">
+<doc>Opens the Invoice creation page</doc>
+<arguments>
+</arguments>
+<msg timestamp="20140915 05:45:10.496" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${INVOICE_CREATE_URL}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:10.497" level="TRACE">Arguments: [ u'https://go.xero.com/RepeatTransactions/Edit.aspx?type=AR' ]</msg>
+<msg timestamp="20140915 05:45:10.497" level="INFO">Opening url 'https://go.xero.com/RepeatTransactions/Edit.aspx?type=AR'</msg>
+<msg timestamp="20140915 05:45:10.497" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/url {"url": "https://go.xero.com/RepeatTransactions/Edit.aspx?type=AR", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1"}</msg>
+<msg timestamp="20140915 05:45:13.560" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:17.563" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:17.563" starttime="20140915 05:45:10.497"></status>
+</kw>
+<msg timestamp="20140915 05:45:17.563" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:17.563" starttime="20140915 05:45:10.496"></status>
+</kw>
+<kw type="kw" name="Hit The Invoice Save Button">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20140915 05:45:17.564" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${SAVE_BUTTON}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:17.564" level="TRACE">Arguments: [ u'//button[@tabindex="252"]' ]</msg>
+<msg timestamp="20140915 05:45:17.565" level="INFO">Clicking element '//button[@tabindex="252"]'.</msg>
+<msg timestamp="20140915 05:45:17.565" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "xpath", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "//button[@tabindex=\"252\"]"}</msg>
+<msg timestamp="20140915 05:45:17.683" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:21.686" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/element/{f68f23c6-c4bc-794c-aadf-5993e8d20d4a}/click {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": "{f68f23c6-c4bc-794c-aadf-5993e8d20d4a}"}</msg>
+<msg timestamp="20140915 05:45:21.783" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:25.786" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:25.786" starttime="20140915 05:45:17.564"></status>
+</kw>
+<msg timestamp="20140915 05:45:25.786" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:25.786" starttime="20140915 05:45:17.563"></status>
+</kw>
+<kw type="kw" name="Check If Alert Present">
+<doc></doc>
+<arguments>
+<arg>${ERRORS_OCCURED_ALERT}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:25.787" level="TRACE">Arguments: [ ${error_message}=u'5 errors occurred for the following reasons:' ]</msg>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:25.787" level="TRACE">Arguments: [ u'5 errors occurred for the following reasons:' ]</msg>
+<msg timestamp="20140915 05:45:25.788" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/frame {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": null}</msg>
+<msg timestamp="20140915 05:45:25.795" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:29.799" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "xpath", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "//*[contains(., '5 errors occurred for the following reasons:')]"}</msg>
+<msg timestamp="20140915 05:45:29.809" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:33.811" level="INFO">Current page contains text '5 errors occurred for the following reasons:'.</msg>
+<msg timestamp="20140915 05:45:33.811" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:33.811" starttime="20140915 05:45:25.787"></status>
+</kw>
+<msg timestamp="20140915 05:45:33.812" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:33.812" starttime="20140915 05:45:25.786"></status>
+</kw>
+<kw type="kw" name="Check If Alert Present">
+<doc></doc>
+<arguments>
+<arg>${ERROR_INVOICE_SHOULD_NOT_BE_EMPTY}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:33.813" level="TRACE">Arguments: [ ${error_message}=u'Invoice Date cannot be empty.' ]</msg>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:33.813" level="TRACE">Arguments: [ u'Invoice Date cannot be empty.' ]</msg>
+<msg timestamp="20140915 05:45:33.814" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/frame {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": null}</msg>
+<msg timestamp="20140915 05:45:33.821" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:37.824" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "xpath", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "//*[contains(., 'Invoice Date cannot be empty.')]"}</msg>
+<msg timestamp="20140915 05:45:37.835" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:41.837" level="INFO">Current page contains text 'Invoice Date cannot be empty.'.</msg>
+<msg timestamp="20140915 05:45:41.837" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:41.837" starttime="20140915 05:45:33.813"></status>
+</kw>
+<msg timestamp="20140915 05:45:41.837" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:41.837" starttime="20140915 05:45:33.812"></status>
+</kw>
+<kw type="kw" name="Check If Alert Present">
+<doc></doc>
+<arguments>
+<arg>${ERROR_DUE_DATE_CANNOT_BE_EMPTY}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:41.838" level="TRACE">Arguments: [ ${error_message}=u'Due Date cannot be empty.' ]</msg>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20140915 05:45:41.839" level="TRACE">Arguments: [ u'Due Date cannot be empty.' ]</msg>
+<msg timestamp="20140915 05:45:41.839" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/frame {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "id": null}</msg>
+<msg timestamp="20140915 05:45:41.846" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:45.848" level="DEBUG">POST http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1/elements {"using": "xpath", "sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1", "value": "//*[contains(., 'Due Date cannot be empty.')]"}</msg>
+<msg timestamp="20140915 05:45:45.869" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:49.871" level="INFO">Current page contains text 'Due Date cannot be empty.'.</msg>
+<msg timestamp="20140915 05:45:49.871" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:49.871" starttime="20140915 05:45:41.839"></status>
+</kw>
+<msg timestamp="20140915 05:45:49.872" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:49.872" starttime="20140915 05:45:41.838"></status>
+</kw>
+<doc>This test checks for few mandatory params in Invoice creation page</doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20140915 05:45:49.872" critical="yes" starttime="20140915 05:45:10.494"></status>
+</test>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20140915 05:45:49.873" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20140915 05:45:49.873" level="DEBUG">Closing browser with session id 8142c2e2-1d33-5848-9564-ac3f94900fb1</msg>
+<msg timestamp="20140915 05:45:49.873" level="DEBUG">DELETE http://127.0.0.1:65179/hub/session/8142c2e2-1d33-5848-9564-ac3f94900fb1 {"sessionId": "8142c2e2-1d33-5848-9564-ac3f94900fb1"}</msg>
+<msg timestamp="20140915 05:45:49.879" level="DEBUG">Finished Request</msg>
+<msg timestamp="20140915 05:45:53.927" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20140915 05:45:53.927" starttime="20140915 05:45:49.873"></status>
+</kw>
+<doc>Test the repeated Invoice feature</doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20140915 05:45:53.927" starttime="20140915 05:43:57.196"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="1" id="s1" name="Test Repeated Invoice">Test Repeated Invoice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
