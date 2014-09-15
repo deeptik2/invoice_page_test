@@ -1,0 +1,80 @@
+*** Settings ***
+Documentation    Test the repeated Invoice feature
+Library           Selenium2Library    50
+
+Suite Setup     Launch Browser And Sign Into Xero 
+Suite Teardown   Close Browser
+
+
+*** Variables ***
+${XERO_LOGIN_PAGE}     https://go.xero.com
+${BROWSER_FIREFOX}     firefox
+${EMAIL_INPUT_TEXTBOX}     id=email
+${PASSWORD_INPUT_TEXTBOX}    id=password
+${USER_EMAIL}     deepti.kinnerkar@gmail.com
+${USER_PASSWORD}     Secret123
+${LOGIN_BUTTON}     id=submitButton
+${DASHBOARD}        Dashboard
+${ACCOUNTS_ID}     id=Accounts
+
+${INVOICE_CREATE_URL}     https://go.xero.com/RepeatTransactions/Edit.aspx?type=AR
+${SAVE_BUTTON}     //button[@tabindex="252"]
+
+${SALES_ID}     xpath=//a[contains(@href,'/Accounts/Receivable/Dashboard') and text()="Sales"]
+${NEW_BUTTON}     xpath=//a[contains(@href,'/AccountsReceivable/Edit.aspx') and @id="ext-gen1037"]
+${NEW_BUTTON_DROP_DOWN}     //span[@id="ext-gen1076"]
+${REPEATING_INVOICE_LINK}     //b[text()="Repeating invoice"]
+
+
+### Error Messages ###
+${ERRORS_OCCURED_ALERT}     5 errors occurred for the following reasons:
+${ERROR_INVOICE_SHOULD_NOT_BE_EMPTY}     Invoice Date cannot be empty. 
+${ERROR_DUE_DATE_CANNOT_BE_EMPTY}     Due Date cannot be empty.
+
+
+*** Test Cases ***
+
+
+Test for A Few Mandatory Params
+	[Documentation]     This test checks for few mandatory params in Invoice creation page
+    Initiate Repeating Invoice
+	Hit The Invoice Save Button
+	Check If Alert Present     ${ERRORS_OCCURED_ALERT}
+	Check If Alert Present     ${ERROR_INVOICE_SHOULD_NOT_BE_EMPTY}
+    Check If Alert Present     ${ERROR_DUE_DATE_CANNOT_BE_EMPTY}	
+
+
+*** Keyword ***
+
+Launch Xero Login Page
+	[Documentation]     Launches Xero site in Firefox
+	Open Browser                     ${XERO_LOGIN_PAGE}   ${BROWSER_FIREFOX}
+	Maximize Browser Window
+	Page Should Contain Element     ${EMAIL_INPUT_TEXTBOX}
+    Set Selenium Speed               4
+
+
+Sign In to Xero
+	[Documentation]     Log into the xero website
+	Input Text     ${EMAIL_INPUT_TEXTBOX}    ${USER_EMAIL}
+	Input Text     ${PASSWORD_INPUT_TEXTBOX}    ${USER_PASSWORD}	
+	Click Element     ${LOGIN_BUTTON}
+	Page Should Contain     ${DASHBOARD}
+
+Launch Browser And Sign Into Xero
+	Launch Xero Login Page
+    Sign In to Xero
+    Wait Until Element Is Visible     ${ACCOUNTS_ID}
+
+
+Initiate Repeating Invoice
+	[Documentation]    Opens the Invoice creation page
+	Go to     ${INVOICE_CREATE_URL}
+
+
+Hit The Invoice Save Button
+	Click Element    ${SAVE_BUTTON}
+
+
+Check If Alert Present     [Arguments]  ${error_message}
+	Page Should Contain    ${error_message}
