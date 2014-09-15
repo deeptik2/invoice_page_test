@@ -15,9 +15,7 @@ Steps to run robot framework test cases in Mac machine:
 
    Note: Change the test@gmail.com and mypassword to a valid xero credentials
 
-5. To view the report, please open 'report.html' file generated at same location. I have attached a sample report which I was generated for this test case.
-
-
+5. To view the report, please open 'report.html' file generated at same location. I have attached a sample report which was generated for this test case.
 
 
 In case you want to run the tests in Linux machine, please check the link "http://dailychitty.blogspot.in/2014/07/configuring-jenkins-agent-to-run-robot.html" to install the robot-framework related libraries.
